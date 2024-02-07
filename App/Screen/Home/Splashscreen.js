@@ -14,12 +14,12 @@ const Splashscreen = () => {
       <View></View>
 
       <Image
-        source={require('../../Assets/img/ritam.jpeg')}
+        source={require('../../Assets/img/ganesha.jpeg')}
         style={styles.imgstyl}
       />
 
       <View>
-        <Text style={styles.txt}>Students give ur Attendance pls 👨‍🎓</Text>
+        <Text style={styles.txt}>ganpati bappa morya💖</Text>
         <Text style={{...styles.txt, textAlign: 'center'}}>
           Made in india💕
         </Text>

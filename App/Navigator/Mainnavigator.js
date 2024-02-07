@@ -4,15 +4,16 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Login from '../Screen/Auth/login';
 import Setting from '../Screen/setting.js/setting';
 import Profile from '../Screen/Account/profile';
-import Iconre from 'react-native-vector-icons/Ionicons';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon1 from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Feather';
+import Icon2 from 'react-native-vector-icons/Ionicons';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 const Tab = createBottomTabNavigator();
 const Mainnavigator = () => {
   return (
     <Tab.Navigator initialRouteName="Home">
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Services"
         component={Login}
         options={{
@@ -32,19 +33,19 @@ const Mainnavigator = () => {
           },
           headerShown: false,
         }}
-      />
+      /> */}
       <Tab.Screen
-        name="Reports"
+        name="Home"
         component={Setting}
         options={{
           tabBarIcon: ({tintcolor}) => (
-            // <Icon name="package" color={tintcolor} size={25} />
-            <Image
-              source={{
-                uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk4-kuY57ycq6Z9aCLDBim9KlUZCDqNZkBnfTNO67FQfKfg5Dq',
-              }}
-              style={{height: 37, width: 40, borderRadius: 20}}
-            />
+            <Icon2 name="home-sharp" color={tintcolor} size={25} />
+            // <Image
+            //   source={{
+            //     uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk4-kuY57ycq6Z9aCLDBim9KlUZCDqNZkBnfTNO67FQfKfg5Dq',
+            //   }}
+            //   style={{height: 37, width: 40, borderRadius: 20}}
+            // />
           ),
           tabBarStyle: {height: 60},
           tabBarLabelStyle: {
@@ -57,11 +58,11 @@ const Mainnavigator = () => {
         }}
       />
       <Tab.Screen
-        name="More"
+        name="Me"
         component={Profile}
         options={{
           tabBarIcon: tintcolor => (
-            <Iconre name="reorder-three-outline" size={30} color={tintcolor} />
+            <Icon1 name="person" size={30} color={tintcolor} />
           ),
           tabBarStyle: {height: 60},
           tabBarLabelStyle: {

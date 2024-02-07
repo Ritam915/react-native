@@ -7,9 +7,9 @@ const Setting = () => {
     <View>
       <View style={{flexDirection: 'row'}}>
         <View style={styles.header}>
-          <StatusBar backgroundColor={'#634cb4'} barStyle="light-content" />
+          <StatusBar backgroundColor={'#fff'} barStyle="light-content" />
           <Text style={{fontSize: 26, color: '#fff', fontWeight: 'bold'}}>
-            School Attendance
+            my app
           </Text>
         </View>
         <View style={styles.view2}>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   header: {
     height: 50,
     width: '80%',
-    backgroundColor: '#634cb4',
+    backgroundColor: '#48C9B0',
     paddingLeft: 10,
   },
   Icon: {
@@ -47,6 +47,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: 50,
     width: '20%',
-    backgroundColor: '#634cb4',
+    backgroundColor: '#48C9B0',
   },
 });

@@ -5,6 +5,9 @@ import Mainnavigator from './App/Navigator/Mainnavigator';
 import 'react-native-gesture-handler';
 import Splashscreen from './App/Screen/Home/Splashscreen';
 import Signup from './App/Screen/Home/Signup';
+import register from './App/Screen/Auth/register';
+import PrivacyPolicy from './App/Screen/Account/privacy';
+import Terms from './App/Screen/Account/Terms';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -12,7 +15,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setshowsplashscreen(false);
-    }, 4000);
+    }, 1000);
   }, []);
   return (
     <NavigationContainer>
@@ -33,6 +36,21 @@ function App() {
           name="mainscreen"
           options={{headerShown: false}}
           component={Mainnavigator}
+        />
+        <Stack.Screen
+          name="register"
+          options={{headerShown: false}}
+          component={register}
+        />
+        <Stack.Screen
+          name="Privacy-Policy"
+          component={PrivacyPolicy}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Terms"
+          component={Terms}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>

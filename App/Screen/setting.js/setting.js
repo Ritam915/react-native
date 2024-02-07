@@ -1,37 +1,120 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import React from 'react';
-import Header from '../../Component/Header/Header';
-import {Card, Icon} from 'react-native-basic-elements';
+
+const carBrands = [
+  {
+    id: 1,
+    name: 'kolkata',
+    price: 'RS:100',
+    date: '31 Dec -10:54 pm',
+  },
+  {
+    id: 2,
+    name: 'mumbai',
+    price: 'RS:200',
+    date: '01 Jan -11:23 am',
+  },
+  {
+    id: 3,
+    name: 'kolkata',
+    price: 'RS:100',
+    date: '02 Jan -12:15 pm',
+  },
+  {
+    id: 4,
+    name: 'mumbai',
+    price: 'RS:200',
+    date: '03 Jan -01:30 pm',
+  },
+  {
+    id: 5,
+    name: 'kolkata',
+    price: 'RS:100',
+    date: '04 Jan -02:45 am',
+  },
+  {
+    id: 6,
+    name: 'mumbai',
+    price: 'RS:200',
+    date: '05 Jan -03:00 pm',
+  },
+  {
+    id: 7,
+    name: 'kolkata',
+    price: 'RS:100',
+    date: '05 Jan -03:00 pm',
+  },
+  {
+    id: 8,
+    name: 'mumbai',
+    price: 'RS:200',
+    date: '05 Jan -03:00 pm',
+  },
+  {
+    id: 9,
+    name: 'kolkata',
+    price: 'RS:100',
+    date: '05 Jan -03:00 pm',
+  },
+  {
+    id: 10,
+    name: 'mumbai',
+    price: 'RS:200',
+    date: '05 Jan -03:00 pm',
+  },
+];
 
 const Setting = () => {
-  return (
-    <View style={styles.container}>
-      <Header />
-      <Text
-        style={{
-          fontFamily: 'Roboto-Bold',
-          fontSize: 30,
-          color: '#000',
-          margin: 10,
-        }}>
-        Reports
-      </Text>
-      <View style={{flexDirection: 'row', marginTop: 10}}>
-        <Card style={styles.cards}>
-          <Image
-            source={require('../../Assets/img/Screenshot.jpg')}
-            style={{height: 60, width: 60}}
-          />
-          <Text>Students Attendance Reports</Text>
-        </Card>
-        <Card style={styles.cards}>
-          <Image
-            source={require('../../Assets/img/Screenshot.jpg')}
-            style={{height: 60, width: 60}}
-          />
-          <Text> Self Attendance Report</Text>
-        </Card>
+  const ListItem = ({item}) => {
+    return (
+      <View style={styles.cardlist}>
+        <Image
+          style={{height: 60, width: 50}}
+          source={require('../../Assets/img/car.png')}
+        />
+        <View style={{flexDirection: 'column'}}>
+          <Text style={styles.Name}>{item.name}</Text>
+          <Text
+            style={{...styles.Name, fontFamily: 'Roboto-Medium', fontSize: 15}}>
+            {item.price}
+          </Text>
+          <Text>{item.date}</Text>
+        </View>
+        <TouchableOpacity
+          style={{
+            height: 25,
+            width: 80,
+            backgroundColor: 'white',
+            borderRadius: 10,
+            alignSelf: 'center',
+          }}>
+          <Text
+            style={{
+              textAlign: 'center',
+              fontFamily: 'Roboto-Bold',
+              fontSize: 20,
+            }}>
+            Send
+          </Text>
+        </TouchableOpacity>
       </View>
+    );
+  };
+  return (
+    <View>
+      <FlatList
+        data={carBrands}
+        renderItem={ListItem}
+        keyExtractor={item => item.id}
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 };
@@ -39,19 +122,19 @@ const Setting = () => {
 export default Setting;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'lightgrey',
+  cardlist: {
+    backgroundColor: '#ECF0F1',
+    height: 100,
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    borderRadius: 10,
+    flexDirection: 'row',
+    margin: 10,
   },
-  cards: {
-    height: 160,
-    width: '45%',
-    backgroundColor: '#fff',
-    marginLeft: 10,
-    marginRight: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 20,
-    elevation: 10,
+  Name: {
+    fontFamily: 'Roboto-Bold',
+    color: '#000',
+    fontSize: 20,
   },
 });

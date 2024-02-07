@@ -18,7 +18,7 @@ const Profile = () => {
   const Navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Header />
+      {/* <Header /> */}
       <Text
         style={{
           fontSize: 30,
@@ -27,20 +27,55 @@ const Profile = () => {
           marginHorizontal: 10,
           marginVertical: 5,
         }}>
-        General Services
+        Ritam Maity
       </Text>
-      <View style={{flexDirection: 'row', marginTop: 10}}>
-        <Card style={styles.card}>
+
+      <View style={{marginLeft: 10}}>
+        <TouchableOpacity style={styles.card}>
           <Image
             source={require('../../Assets/img/changePassword.png')}
-            style={{height: 50, width: 50}}
+            style={{height: 35, width: 35}}
           />
-          <Text>Change Password</Text>
-        </Card>
-        <Card style={styles.card}>
-          <Icon name="person" type="Ionicon" style={{fontSize: 45}} />
-          <Text>My Profile</Text>
-        </Card>
+
+          <Text style={{...styles.Text, marginLeft: 15}}>Change Password</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.card}>
+          <Icon name="person" type="Ionicon" style={{fontSize: 30}} />
+          <Text style={styles.Text}>My Profile</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.card}>
+          {/* <Image
+              source={require('../../Assets/img/settings.png')}
+              style={{height: 20, width: 20}}></Image> */}
+          <Icon name="settings-sharp" type="Ionicon" style={{fontSize: 30}} />
+          <Text style={styles.Text}>settings</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => Navigation.navigate('Privacy-Policy')}
+          style={styles.card}>
+          <Icon name="privacy-tip" type="MaterialIcon" style={{fontSize: 29}} />
+          <Text style={styles.Text}>privacy policy</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => Navigation.navigate('Terms')}>
+          <Icon
+            name="psychology-alt"
+            type="MaterialIcon"
+            style={{fontSize: 35}}
+          />
+          <Text style={{...styles.Text, marginLeft: 13}}>
+            Terms & conditions
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.card}>
+          <Icon
+            name="log-out"
+            type="Entypo"
+            style={{fontSize: 25, paddingLeft: 7}}
+          />
+          <Text style={{...styles.Text, marginLeft: 18}}>Log out</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -50,18 +85,19 @@ export default Profile;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'lightgrey',
+    backgroundColor: '#fff',
   },
   card: {
-    height: 160,
-    width: '45%',
-    backgroundColor: '#fff',
-    marginLeft: 10,
-    marginRight: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 20,
-    elevation: 10,
+    flexDirection: 'row',
+    height: 50,
+    marginTop: 20,
+    borderBottomWidth: 0.3,
+  },
+  Text: {
+    fontSize: 15,
+    marginLeft: 20,
+
+    color: '#000',
+    fontFamily: 'Roboto-Bold',
   },
 });

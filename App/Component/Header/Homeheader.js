@@ -6,7 +6,7 @@ import Header from '../../Component/Header/Header';
 const Homeheader = () => {
   return (
     <View>
-      <Header />
+      {/* <Header /> */}
       <Text
         style={{
           fontFamily: 'Roboto-Bold',
